@@ -22,6 +22,6 @@
     </servlet-mapping>
     <!-- welcome file -->
     <welcome-file-list>
-        <welcome-file>facultylogin.html</welcome-file>
+        <welcome-file>login.html</welcome-file>
     </welcome-file-list>
 </web-app>

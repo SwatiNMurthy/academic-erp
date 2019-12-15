@@ -1,3 +1,4 @@
+<!--
 # Academic ERP
 
 ## PROJECT 3.3: Faculty Grade Students
@@ -75,6 +76,16 @@ INSERT INTO CourseStudent (COURSE_ID, STUDENT_ID, grade) VALUES
 
 ## Steps to run the project
 * Run the project in intelliJ
-* Enter any faculty login details as das, a1234 (or any other usernme/password combo of Faculty table) and click on Login, which displays the course id, name handled by that faculty
+* Enter any faculty login details as das, a1234 (or any other username/password combo of Faculty table) and click on Login, which displays the course id, name handled by that faculty
 * Click on any course, which displays the students id, name, grade who enrolled for that course.
 * update the grades of the students and click on Save.
+-->
+
+#Academic ERP
+IIIT Bangalore. System software.
+#
+Completed parts: 3.3 (Faculty Grade Students)
+
+Extra features added:
+
+Added a registration form for faculty and students. Working on moving this responsibility to an admin user.

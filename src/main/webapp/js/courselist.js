@@ -1,4 +1,4 @@
-var api = "webapi/facultylogin/getCourses";
+var api = "webapi/faculty/getCourses";
 $.get(api, function (course, status) {
     var username = sessionStorage.getItem("username");
     if (status == "success") {

@@ -6,6 +6,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.iiitb.bean.Course;
 import org.iiitb.bean.CourseStudent;
+import org.iiitb.bean.Faculty;
 import org.iiitb.bean.Student;
 import org.iiitb.service.FacultyService;
 import org.iiitb.service.impl.FacultyServiceImpl;
@@ -22,7 +23,7 @@ import java.util.List;
 
 
 import java.lang.reflect.Type;
-@Path("/facultylogin")
+@Path("/faculty")
 public class FacultyController {
     private FacultyService facultyService = new FacultyServiceImpl();
     @POST
@@ -31,7 +32,7 @@ public class FacultyController {
     @Produces(MediaType.TEXT_PLAIN)
     public Response login(@FormDataParam("username") String username,
                              @FormDataParam("password") String password) throws URISyntaxException{
-        System.out.println(username+"--------------"+password);
+        //System.out.println(username+"--------------"+password);
         boolean valid =  facultyService.validate(username, password);
         if (valid) {
             return Response.seeOther(new URI("/academic_erp_war/courselist.html")).build();
@@ -40,6 +41,38 @@ public class FacultyController {
 
         return Response.status(401, "Wrong username or password").build();
     }
+
+    @POST
+    @Path("/signup")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addStudent(@FormDataParam("firstName") String firstName,
+                               @FormDataParam("lastName") String lastName,
+                               @FormDataParam("username") String username,
+                               @FormDataParam("password") String password,
+                               @FormDataParam("secretKey") String secretKey)
+                               throws URISyntaxException {
+        Faculty faculty = new Faculty();
+        String name = firstName + " " + lastName;
+        faculty.setName(name);
+        faculty.setUsername(username);
+        faculty.setPassword(password);
+
+        //System.out.println(username+"*****"+password+"*******"+secretKey);
+
+        facultyService.save(faculty);
+
+        return Response.seeOther(new URI("/academic_erp_war/login.html")).build();
+        /*Student student = new Student();
+        student.setFirstName(firstName);
+        student.setMiddleName(middleName);
+        student.setLastName(lastName);
+        student.setEmailId(emailId);
+
+        studentService.save(student, photograph, fileDetail, domainId);
+        return Response.seeOther(new URI("/academic_erp_war/studentlist.html")).build();*/
+    }
+
     /*@POST
     @Path("/login")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -86,8 +119,8 @@ public class FacultyController {
     }
 
     @POST
-    @Path("/save")
+    @Path("/updateGrade")
     public void updateGrade(String obj) {
-        facultyService.save(obj);
+        facultyService.updateGrade(obj);
     }
 }

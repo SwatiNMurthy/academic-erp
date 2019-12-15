@@ -28,6 +28,8 @@ public interface FacultyService {
 
     List<Course> findCoursesAll();
 
-    void save(String s);
+    void updateGrade(String s);
+
+    void save(Faculty faculty);
 
 }

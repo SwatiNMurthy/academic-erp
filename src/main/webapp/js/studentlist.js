@@ -5,7 +5,7 @@
         type: 'POST',
         processData: false,
         contentType: false,
-        url: "http://localhost:8080/academic_erp_war/webapi/facultylogin/getStudents",
+        url: "http://localhost:8080/academic_erp_war/webapi/faculty/getStudents",
         data: formData,
         success: function (student) {
             alert(sessionStorage.getItem("cid"));
@@ -31,9 +31,9 @@
 
 */
 
-var api = "webapi/facultylogin/getStudents";
+var api = "webapi/faculty/getStudents";
 $.get(api, function (course, status) {
-    debugger;
+    //debugger;
     var courseId = sessionStorage.getItem("courseId");
     if (status == "success") {
 
@@ -74,5 +74,5 @@ function showTableData() {
     alert(JSON.stringify(jsonObj));
     var jsonText = JSON.stringify(jsonObj);
 
-    $.post('webapi/facultylogin/save', jsonText);
+    $.post('webapi/faculty/updateGrade', jsonText);
 }

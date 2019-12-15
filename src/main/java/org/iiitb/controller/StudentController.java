@@ -19,17 +19,26 @@ public class StudentController {
     private StudentService studentService = new StudentServiceImpl();
     
     @POST
+    @Path("/login")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
-    public Response addStudent(@FormDataParam("name") String name) throws URISyntaxException {
+    public void login(@FormDataParam("username") String username,
+                          @FormDataParam("password") String password) throws URISyntaxException{
+        System.out.println(username+"--------------"+password);
+        /*boolean valid =  studentService.validate(username, password);
+        if (valid) {
+            return Response.seeOther(new URI("/academic_erp_war/courselist.html")).build();
+            //return Response.ok().build();
+        }
 
-        Student student = new Student();
-        student.setName(name);
-
-        studentService.save(student);
-        return Response.seeOther(new URI("/academic_erp_war/studentlist.html")).build();
+        return Response.status(401, "Wrong username or password").build();*/
     }
-    /*public Response addStudent(@FormDataParam("firstName") String firstName,
+    /*
+    @POST
+    @Path("/signup")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addStudent(@FormDataParam("firstName") String firstName,
                                @FormDataParam("middleName") String middleName,
                                @FormDataParam("lastName") String lastName,
                                @FormDataParam("emailId") String emailId,

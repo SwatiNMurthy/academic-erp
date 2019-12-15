@@ -28,6 +28,7 @@ public class FacultyDao {
         }
         transaction.commit();
         session.close();
+        System.out.println(valid);
         return valid;
     }
 
@@ -91,7 +92,7 @@ public class FacultyDao {
         return studentList;
     }
 
-    public void save(String s) {
+    public void updateGrade(String s) {
         ObjectMapper mapper = new ObjectMapper();
 
         try {
@@ -125,17 +126,17 @@ public class FacultyDao {
     }
 
 
-    /*public void save(Student student) {
+    public void save(Faculty faculty) {
         Session session = SessionUtil.getSession();
         Transaction transaction = session.beginTransaction();
 
-        session.save(student);
+        session.save(faculty);
 
         transaction.commit();
         session.close();
     }
 
-    public Student find(Integer id) {
+    /*public Student find(Integer id) {
         Session session = SessionUtil.getSession();
         Transaction transaction = session.beginTransaction();
 

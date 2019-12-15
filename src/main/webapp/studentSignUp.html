@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Admission Page">
+    <meta name="author" content="Swati N Murthy">
+
+    <title>Student List | IIITB</title>
+
+    <!-- jQuery -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.css"/>
+    <script type="text/javascript" src="datatables/datatables.js"></script>
+
+    <!-- Custom Styles-->
+    <link href="css/admission.css" rel="stylesheet">
+    <!-- Custom Scripts -->
+    <script src="js/studentSignUp.js" type="text/javascript"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="auth-form-body">
+        <div class="text-center">
+            <h1>Student Sign Up</h1>
+            <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
+        </div>
+
+        <form class="form-signin" id="admission-form" action="webapi/student/signup" method="post"
+              enctype="multipart/form-data">
+
+            <div class="form-label-group">
+                <input type="text" id="firstName" name="firstName" class="form-control"
+                       placeholder="First Name" required
+                       autofocus>
+                <label for="firstName">First Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="middleName" name="middleName" class="form-control"
+                       placeholder="Middle Name">
+                <label for="middleName">Middle Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="lastName" name="lastName" class="form-control"
+                       placeholder="Last Name">
+                <label for="lastName">Last Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="studentUsername" name="studentUsername" class="form-control"
+                       placeholder="Choose a Username">
+                <label for="studentUsername">Username</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="password" id="studentPassword" name="studentUsername" class="form-control"
+                       placeholder="Choose a Password">
+                <label for="studentPassword">Password</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="repeatPassword" name="studentPassword" class="form-control"
+                       placeholder="Repeat the Password" onfocusout="checkEquality()">
+                <label for="repeatPassword">Password</label>
+            </div>
+            <div class="form-label-group">
+                <input type="password" id="secretKey" name="secretKey" class="form-control"
+                       placeholder="Enter Secret Key" onfocusout="checkEquality()">
+                <label for="secretKey">Secret Key</label>
+            </div>
+
+            <button class="btn btn-primary btn-block mt-4" type="submit">Register</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

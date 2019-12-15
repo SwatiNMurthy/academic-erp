@@ -6,7 +6,7 @@
     <meta name="description" content="Faculty Login">
     <meta name="author" content="Swati N Murthy">
 
-    <title>Faculty Login</title>
+    <title>Student Login</title>
 
     <!-- jQuery -->
     <script src="jquery/jquery.min.js"></script>
@@ -30,11 +30,11 @@
 <div class="container">
     <div class="auth-form-body">
         <div class="text-center">
-            <h1>Faculty Login</h1>
+            <h1>Student Login</h1>
             <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
         </div>
 
-        <form class="form-signin" id="faculty-signin-form" method="post" action="webapi/faculty/login"
+        <form class="form-signin" id="faculty-signin-form" method="post" action="webapi/student/login"
               enctype="multipart/form-data">
 
             <div class="form-label-group">
@@ -54,8 +54,8 @@
             <button id="button" class="btn btn-primary btn-block mt-4">Login</button>
         </form>
         <button id="facultySignUp" class="btn btn-primary btn-block mt-4"
-                onclick="document.location.href='facultySignUp.html'">
-            New Faculty? Sign Up
+                onclick="document.location.href='studentSignUp.html'">
+            New Student? Sign Up
         </button>
         <h3 id="failure_p" style="display: none; color:#fff">Please enter a valid login id or password</h3>
     </div>

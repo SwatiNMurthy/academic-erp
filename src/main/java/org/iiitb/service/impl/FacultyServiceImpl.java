@@ -1,6 +1,7 @@
 package org.iiitb.service.impl;
 
 import org.iiitb.bean.Course;
+import org.iiitb.bean.Faculty;
 import org.iiitb.bean.Student;
 import org.iiitb.dao.FacultyDao;
 import org.iiitb.service.FacultyService;
@@ -29,7 +30,10 @@ public class FacultyServiceImpl implements FacultyService {
     }
 
     @Override
-    public void save(String s) {
-        facultyDao.save(s);
+    public void updateGrade(String s) {
+        facultyDao.updateGrade(s);
     }
+
+    @Override
+    public void save(Faculty faculty) {facultyDao.save(faculty);}
 }
