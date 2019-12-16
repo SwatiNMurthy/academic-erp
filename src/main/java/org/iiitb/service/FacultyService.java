@@ -32,4 +32,7 @@ public interface FacultyService {
 
     void save(Faculty faculty);
 
+    List<Faculty> listAllFaculty();
+
+    Faculty findFacultyByFacultyID(int facultyId);
 }

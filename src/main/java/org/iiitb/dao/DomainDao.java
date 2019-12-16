@@ -14,7 +14,7 @@ public class DomainDao {
         Transaction transaction = session.beginTransaction();
         
         session.save(domain);
-        
+
         transaction.commit();
         session.close();
     }

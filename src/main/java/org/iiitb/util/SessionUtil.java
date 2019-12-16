@@ -19,6 +19,7 @@ public class SessionUtil {
             
             configuration.addAnnotatedClass(Student.class)
                     .addAnnotatedClass(Faculty.class)
+                    .addAnnotatedClass(Domain.class)
                     .addAnnotatedClass(Course.class)
                     .addAnnotatedClass(CourseStudent.class)
                     .addAnnotatedClass(CourseStudentPK.class);

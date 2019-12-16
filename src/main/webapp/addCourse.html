@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Add Course">
+    <meta name="author" content="Swati N Murthy">
+
+    <title>Add Course</title>
+
+    <!-- jQuery -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom Styles-->
+    <link href="css/admission.css" rel="stylesheet">
+
+    <!-- Custom JS-->
+    <script type="text/javascript" src="js/addCourse.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <div class="auth-form-body">
+        <div class="text-center">
+            <h1>Add a Course</h1>
+            <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
+        </div>
+
+        <form class="form-signin" id="add-course-form" method="post" action="webapi/admin/addCourse"
+              enctype="multipart/form-data">
+
+            <div class="form-label-group">
+                <input type="text" id="courseId" name="courseId" class="form-control"
+                       placeholder="Course Id" required
+                       autofocus>
+                <label for="courseId">Course Id</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="text" id="courseName" name="courseName" class="form-control"
+                       placeholder="Course Name">
+                <label for="courseName">Course Name</label>
+            </div>
+
+            <div class="form-label-group">
+                <select id="facultyId" name="facultyId" class="form-control">
+                    <option value="0" selected disabled>Select Faculty</option>
+                </select>
+            </div>
+            <br>
+            <button id="button" class="btn btn-primary btn-block mt-4">Add Course</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

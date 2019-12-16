@@ -25,7 +25,7 @@
     <!-- Custom Styles-->
     <link href="css/admission.css" rel="stylesheet">
     <!-- Custom Scripts -->
-    <script src="js/studentSignUp.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/studentSignUp.js"></script>
 
 </head>
 <body>
@@ -36,7 +36,7 @@
             <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
         </div>
 
-        <form class="form-signin" id="admission-form" action="webapi/student/signup" method="post"
+        <form class="form-signin" id="student-signup-form" action="webapi/student/signup" method="post"
               enctype="multipart/form-data">
 
             <div class="form-label-group">
@@ -59,28 +59,34 @@
             </div>
 
             <div class="form-label-group">
-                <input type="text" id="studentUsername" name="studentUsername" class="form-control"
-                       placeholder="Choose a Username">
-                <label for="studentUsername">Username</label>
+                <select id="domainId" name="domainId" class="form-control">
+                    <option value="0" selected disabled>Select Domain</option>
+                </select>
             </div>
 
             <div class="form-label-group">
-                <input type="password" id="studentPassword" name="studentUsername" class="form-control"
+                <input type="text" id="username" name="username" class="form-control"
+                       placeholder="Choose a Username">
+                <label for="username">Username</label>
+            </div>
+
+            <div class="form-label-group">
+                <input type="password" id="password" name="password" class="form-control"
                        placeholder="Choose a Password">
-                <label for="studentPassword">Password</label>
+                <label for="password">Password</label>
             </div>
             <div class="form-label-group">
-                <input type="password" id="repeatPassword" name="studentPassword" class="form-control"
-                       placeholder="Repeat the Password" onfocusout="checkEquality()">
-                <label for="repeatPassword">Password</label>
+                <input type="password" id="repeatPassword" name="repeatPassword" class="form-control"
+                       placeholder="Repeat Password" onfocusout="checkEquality()">
+                <label for="repeatPassword">Repeat Password</label>
             </div>
             <div class="form-label-group">
                 <input type="password" id="secretKey" name="secretKey" class="form-control"
-                       placeholder="Enter Secret Key" onfocusout="checkEquality()">
+                       placeholder="Enter Secret Key">
                 <label for="secretKey">Secret Key</label>
             </div>
 
-            <button class="btn btn-primary btn-block mt-4" type="submit">Register</button>
+            <button class="btn btn-primary btn-block mt-4">Register</button>
         </form>
     </div>
 </div>

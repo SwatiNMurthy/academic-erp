@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Add Domain">
+    <meta name="author" content="Swati N Murthy">
+
+    <title>Add Domain</title>
+
+    <!-- jQuery -->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="jquery/popper.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JS -->
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- DataTables -->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.css"/>
+    <script type="text/javascript" src="datatables/datatables.js"></script>
+
+    <!-- Custom Styles-->
+    <link href="css/admission.css" rel="stylesheet">
+    <!-- Custom Scripts -->
+    <script type="text/javascript" src="js/addCourse.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="auth-form-body">
+        <div class="text-center">
+            <h1>Add Domain</h1>
+            <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
+        </div>
+
+        <form class="form-signin" id="domain-add-form" action="webapi/domain/addDomain" method="post"
+              enctype="multipart/form-data">
+
+            <div class="form-label-group">
+                <select id="domainBranch" name="domainBranch" class="form-control">
+                    <option value="0" selected disabled>Select Domain Branch</option>
+                    <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                    <option value="Electronics and Communication">Electronics and Communication</option>
+                </select>
+            </div>
+
+            <div class="form-label-group">
+                <select id="domainDiscipline" name="domainDiscipline" class="form-control">
+                    <option value="0" selected disabled>Select Domain Discipline</option>
+                    <option value="MT">M Tech</option>
+                    <option value="IMT">Integrated M Tech</option>
+                </select>
+            </div>
+
+            <button class="btn btn-primary btn-block mt-4">Add Domain</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

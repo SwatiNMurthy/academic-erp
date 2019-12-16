@@ -1,6 +1,7 @@
 package org.iiitb.service;
 
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
+import org.iiitb.bean.Domain;
 import org.iiitb.bean.Student;
 import org.iiitb.dao.StudentDao;
 import org.iiitb.service.impl.DomainServiceImpl;
@@ -26,4 +27,8 @@ public interface StudentService {
     Student findByRollNumber(String rollNumber);
     
     List<Student> findAll();
+
+    String generateRollNumber(Domain domain);
+
+    boolean validate(String username, String password);
 }

@@ -36,4 +36,14 @@ public class FacultyServiceImpl implements FacultyService {
 
     @Override
     public void save(Faculty faculty) {facultyDao.save(faculty);}
+
+    @Override
+    public List<Faculty> listAllFaculty() {
+        return facultyDao.listAllFaculty();
+    }
+
+    @Override
+    public Faculty findFacultyByFacultyID(int facultyId) {
+        return facultyDao.findFacultyByFacultyID(facultyId);
+    }
 }

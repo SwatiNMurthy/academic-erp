@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Faculty Login">
+    <meta name="description" content="Admin Login">
     <meta name="author" content="Swati N Murthy">
 
-    <title>Faculty Login</title>
+    <title>Admin Login</title>
 
     <!-- jQuery -->
     <script src="jquery/jquery.min.js"></script>
@@ -30,11 +30,11 @@
 <div class="container">
     <div class="auth-form-body">
         <div class="text-center">
-            <h1>Faculty Login</h1>
+            <h1>Admin Login</h1>
             <img src="images/icons/logo.jpg" alt="IIIT-B Logo"><br>
         </div>
 
-        <form class="form-signin" id="faculty-signin-form" method="post" action="webapi/faculty/login"
+        <form class="form-signin" id="admin-signin-form" method="post" action="webapi/admin/login"
               enctype="multipart/form-data">
 
             <div class="form-label-group">
@@ -53,9 +53,6 @@
             <br>
             <button id="button" class="btn btn-primary btn-block mt-4">Login</button>
         </form>
-        <button id="facultySignUp" class="btn btn-primary btn-block mt-4">
-            New Faculty? Please contact admin to add you.
-        </button>
         <h3 id="failure_p" style="display: none; color:#fff">Please enter a valid login id or password</h3>
     </div>
 </div>

@@ -17,7 +17,7 @@ public class Domain {
     @NotBlank
     private String discipline; //M.Tech, iM.Tech, MS, Ph.D
     
-    @NotBlank
+    @NotBlank @Column(unique = true)
     private String branch; // CSE, ECE
     
     @NotBlank

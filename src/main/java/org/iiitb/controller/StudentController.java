@@ -22,16 +22,47 @@ public class StudentController {
     @Path("/login")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
     @Produces(MediaType.TEXT_PLAIN)
-    public void login(@FormDataParam("username") String username,
+    public Response login(@FormDataParam("username") String username,
                           @FormDataParam("password") String password) throws URISyntaxException{
         System.out.println(username+"--------------"+password);
-        /*boolean valid =  studentService.validate(username, password);
+        boolean valid =  studentService.validate(username, password);
         if (valid) {
             return Response.seeOther(new URI("/academic_erp_war/courselist.html")).build();
             //return Response.ok().build();
         }
 
-        return Response.status(401, "Wrong username or password").build();*/
+        return Response.status(401, "Wrong username or password").build();
+    }
+    @POST
+    @Path("/signup")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response addStudent(@FormDataParam("firstName") String firstName,
+                               @FormDataParam("middleName") String middleName,
+                               @FormDataParam("lastName") String lastName,
+                               @FormDataParam("username") String username,
+                               @FormDataParam("password") String password,
+                               @FormDataParam("secretKey") String secretKey) throws URISyntaxException{
+        if (secretKey.equals("admin1")) {
+            Student student = new Student();
+            String name = "";
+            if (middleName.length() > 0 ) {
+                name = firstName +" "+ middleName+" "+lastName;
+            } else {
+                name = firstName + " "+ lastName;
+            }
+
+            student.setName(name);
+            student.setUsername(username);
+            student.setPassword(password);
+            studentService.save(student);
+
+
+            return Response.seeOther(new URI("/academic_erp_war/adminActions.html")).build();
+
+        } else {
+            return Response.status(401, "You aren't authorized to add a student").build();
+        }
     }
     /*
     @POST

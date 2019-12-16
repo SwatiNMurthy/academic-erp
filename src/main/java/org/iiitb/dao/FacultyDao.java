@@ -48,6 +48,24 @@ public class FacultyDao {
         session.close();
         return fid;
     }
+    public Faculty findFacultyByFacultyID(int facultyId) {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM Faculty WHERE facultyId = :facultyId";
+        Query query = session.createQuery(hql);
+        query.setParameter("facultyId", facultyId);
+
+        Faculty faculty=null;
+        if (!query.list().isEmpty()) {
+            faculty = (Faculty) query.list().get(0);
+        }
+
+        transaction.commit();
+        session.close();
+
+        return faculty;
+    }
     /*public List<Course> findCourses (String username) {
         int fid = findFacultyIdForUsername(username);
         System.out.println("Faculty ID is : "+fid);
@@ -134,6 +152,19 @@ public class FacultyDao {
 
         transaction.commit();
         session.close();
+    }
+
+    public List<Faculty> listAllFaculty() {
+        Session session = SessionUtil.getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "SELECT facultyId, name FROM Faculty";
+        Query query = session.createQuery(hql);
+
+        List<Faculty> faculties = query.list();
+        transaction.commit();
+        session.close();
+        return faculties;
     }
 
     /*public Student find(Integer id) {
