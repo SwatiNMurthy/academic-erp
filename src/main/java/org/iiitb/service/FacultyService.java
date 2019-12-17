@@ -24,10 +24,6 @@ public interface FacultyService {
 
     //List<Course> findCourses(String username);
 
-    List<Student> findStudents();
-
-    List<Course> findCoursesAll();
-
     void updateGrade(String s);
 
     void save(Faculty faculty);

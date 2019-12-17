@@ -31,7 +31,7 @@
 
 */
 
-var api = "webapi/faculty/getStudents";
+var api = "webapi/course/getCourseStudents";
 $.get(api, function (course, status) {
     //debugger;
     var courseId = sessionStorage.getItem("courseId");

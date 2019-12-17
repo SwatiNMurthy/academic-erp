@@ -85,30 +85,6 @@ public class FacultyDao {
         session.close();
         return courseList;
     }*/
-    public List<Course> findCoursesAll() {
-        Session session = SessionUtil.getSession();
-        Transaction transaction = session.beginTransaction();
-
-        String hql = "FROM Course";
-        Query query = session.createQuery(hql);
-        List<Course> courseList = query.list();
-        transaction.commit();
-        session.close();
-        return courseList;
-    }
-
-    public List<Student> findStudents() {
-        Session session = SessionUtil.getSession();
-        Transaction transaction = session.beginTransaction();
-
-        String hql = "FROM CourseStudent";
-        Query query = session.createQuery(hql);
-        List<Student> studentList = query.list();
-
-        transaction.commit();
-        session.close();
-        return studentList;
-    }
 
     public void updateGrade(String s) {
         ObjectMapper mapper = new ObjectMapper();

@@ -20,16 +20,6 @@ public class FacultyServiceImpl implements FacultyService {
     }*/
 
     @Override
-    public List<Student> findStudents() {
-        return facultyDao.findStudents();
-    }
-
-    @Override
-    public List<Course> findCoursesAll() {
-        return facultyDao.findCoursesAll();
-    }
-
-    @Override
     public void updateGrade(String s) {
         facultyDao.updateGrade(s);
     }

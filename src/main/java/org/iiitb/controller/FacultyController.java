@@ -83,25 +83,6 @@ public class FacultyController {
         return Response.ok().entity(courseList).build();
     }*/
 
-    @GET
-    @Path("/getCourses")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response showAllCourses() {
-        List<Course> courseList = facultyService.findCoursesAll();
-        if (courseList == null)
-            return Response.noContent().build();
-        return Response.ok().entity(courseList).build();
-    }
-
-    @GET
-    @Path("/getStudents")
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getStudents () {
-        List<Student> studentList = facultyService.findStudents();
-        if (studentList == null)
-            return Response.noContent().build();
-        return Response.ok().entity(studentList).build();
-    }
 
     @POST
     @Path("/updateGrade")

@@ -1,5 +1,6 @@
-var api = "webapi/faculty/getCourses";
+var api = "webapi/course/getCourses";
 $.get(api, function (course, status) {
+    //debugger;
     var username = sessionStorage.getItem("username");
     if (status == "success") {
 
