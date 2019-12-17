@@ -65,13 +65,13 @@ function showTableData() {
         item = {};
         item["course"] = parseInt(sessionStorage.getItem("courseId"));
         for (var j = 0; j < objCells.length; j++) {
-            console.log(objCells.item(j).innerHTML);
+            //console.log(objCells.item(j).innerHTML);
             if (j==0) item["student"] = parseInt(objCells.item(j).innerHTML);
             if (j==2) item["grade"] = parseInt(objCells.item(j).innerHTML);
         }
         jsonObj.push(item);
     }
-    alert(JSON.stringify(jsonObj));
+    //alert(JSON.stringify(jsonObj));
     var jsonText = JSON.stringify(jsonObj);
 
     $.post('webapi/faculty/updateGrade', jsonText);
