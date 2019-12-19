@@ -48,7 +48,7 @@ public class StudentDao {
         return student;
     }
     
-    public List<Student> findAll() {
+    public List<Student> getStudents() {
         Session session = SessionUtil.getSession();
         Transaction transaction = session.beginTransaction();
         

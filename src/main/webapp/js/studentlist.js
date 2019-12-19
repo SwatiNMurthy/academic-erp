@@ -33,17 +33,42 @@
 
 var api = "webapi/course/getCourseStudents";
 $.get(api, function (course, status) {
-    //debugger;
     var courseId = sessionStorage.getItem("courseId");
+    var username = sessionStorage.getItem("username");
     if (status == "success") {
-
         var student_data_body = "";
-        for (var i=0; i<course.length; i++) {
-            if(course[i].course.courseId == courseId) {
+        if (username != "admin") {
+            $('#studentGrade').show();
+            $('#gradeSubmit').show();
+            $('#instruction').show();
+
+            for (var i = 0; i < course.length; i++) {
+                if (course[i].course.courseId == courseId) {
+                    student_data_body += '<tr class="data">'
+                        + '<td>' + course[i].student.studentId + '</td>'
+                        + '<td>' + course[i].student.rollNumber + '</td>'
+                        + '<td>' + course[i].student.name + '</td>'
+                        + '<td contenteditable="true">' + course[i].grade + '</td>'
+                        + '</tr>';
+                }
+            }
+        }
+        $('#student_data tbody').html(student_data_body);
+    }
+    $('#student_data').DataTable();
+});
+
+var api = "webapi/student/getStudents";
+$.get(api, function (student, status) {
+    var username = sessionStorage.getItem("username");
+    if (status == "success") {
+        var student_data_body = "";
+        if (username=="admin") {
+            for (var i = 0; i < student.length; i++) {
                 student_data_body += '<tr class="data">'
-                    + '<td>' + course[i].student.studentId + '</td>'
-                    + '<td>' + course[i].student.name + '</td>'
-                    + '<td contenteditable="true">'+ course[i].grade+'</td>'
+                    + '<td>' + student[i].studentId + '</td>'
+                    + '<td>' + student[i].rollNumber + '</td>'
+                    + '<td>' + student[i].name + '</td>'
                     + '</tr>';
             }
         }

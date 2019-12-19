@@ -55,14 +55,4 @@ public class AdminController {
         courseService.save(course);
         return Response.seeOther(new URI("/academic_erp_war/adminActions.html")).build();
     }
-
-
-    @GET
-    @Path("/listFaculty")
-    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
-    public Response listFaculties() {
-        FacultyService facultyService = new FacultyServiceImpl();
-        List<Faculty> faculties = facultyService.listAllFaculty();
-        return Response.ok().entity(faculties).build();
-    }
 }

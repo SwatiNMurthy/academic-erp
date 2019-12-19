@@ -88,9 +88,10 @@ public class StudentController {
     }*/
     
     @GET
+    @Path("/getStudents")
     @Produces(MediaType.APPLICATION_JSON)
     public Response showAllStudent() {
-        List<Student> studentList = studentService.findAll();
+        List<Student> studentList = studentService.getStudents();
         if (studentList == null)
             return Response.noContent().build();
         return Response.ok().entity(studentList).build();

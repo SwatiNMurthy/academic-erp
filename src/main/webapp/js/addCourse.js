@@ -1,4 +1,4 @@
-var api = "webapi/admin/listFaculty";
+var api = "webapi/faculty/getFaculty";
 $.get(api, function (faculty, status) {
     if (status == "success") {
         debugger;

@@ -26,7 +26,7 @@ public interface StudentService {
     
     Student findByRollNumber(String rollNumber);
     
-    List<Student> findAll();
+    List<Student> getStudents();
 
     String generateRollNumber(Domain domain);
 

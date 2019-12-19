@@ -58,6 +58,21 @@ public class FacultyController {
         return Response.seeOther(new URI("/academic_erp_war/login.html")).build();
     }
 
+    @POST
+    @Path("/updateGrade")
+    public void updateGrade(String obj) {
+        facultyService.updateGrade(obj);
+    }
+
+    @GET
+    @Path("/getFaculty")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response getFaculty() {
+        List<Faculty> faculties = facultyService.listAllFaculty();
+        if (faculties == null)
+            return Response.noContent().build();
+        return Response.ok().entity(faculties).build();
+    }
     /*@POST
     @Path("/login")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -84,9 +99,5 @@ public class FacultyController {
     }*/
 
 
-    @POST
-    @Path("/updateGrade")
-    public void updateGrade(String obj) {
-        facultyService.updateGrade(obj);
-    }
+
 }
